@@ -1,0 +1,24 @@
+# Backend
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+sqlalchemy==2.0.25
+pydantic==2.5.3
+python-dotenv==1.0.0
+
+# Database
+alembic==1.13.1
+
+# Google Calendar
+google-api-python-client==2.115.0
+google-auth-httplib2==0.2.0
+google-auth-oauthlib==1.2.0
+
+# Frontend
+streamlit==1.30.0
+
+# Notifications
+python-multipart==0.0.6
+
+# Utils
+requests==2.31.0
+python-dateutil==2.8.2
