@@ -1,3 +1,7 @@
-from .database import Base, Task, Category, Tag, engine, SessionLocal, init_db, get_db
-
-__all__ = ['Base', 'Task', 'Category', 'Tag', 'engine', 'SessionLocal', 'init_db', 'get_db']
+# Esporta tutto da database e schemas per import facili
+from .database import (
+    TaskDB, Categoria, Stato,
+    engine, SessionLocal, Base,
+    init_db, get_db
+)
+from .schemas import Task, TaskCreate, TaskUpdate, TaskBase
