@@ -2,6 +2,7 @@
 from fastapi import FastAPI, HTTPException, Depends
 from sqlalchemy.orm import Session
 from datetime import datetime
+from fastapi.middleware.cors import CORSMiddleware
 
 # Importiamo tutto da models (grazie a __init__.py)
 from models import (
@@ -12,6 +13,16 @@ from models import (
 
 # === INIZIALIZZAZIONE APP ===
 app = FastAPI(title="Jarvis API")
+
+# === CORS ===
+# Permette al frontend (localhost:5173) di comunicare col backend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Frontend Vite
+    allow_credentials=True,
+    allow_methods=["*"],  # Permetti tutti i metodi (GET, POST, ecc.)
+    allow_headers=["*"],  # Permetti tutti gli headers
+)
 
 # Crea le tabelle nel database all'avvio (se non esistono)
 init_db()
